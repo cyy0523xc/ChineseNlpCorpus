@@ -13,4 +13,6 @@ scp ./format_datasets/online_shopping_10_cats/online_shopping_10_cats_pos.txt ro
 scp ./format_datasets/weibo_senti_100k/weibo_senti_100k_neg.txt root@es5:/var/www/eyenlp/files/users/public/corpus/
 scp ./format_datasets/weibo_senti_100k/weibo_senti_100k_pos.txt root@es5:/var/www/eyenlp/files/users/public/corpus/
 
+scp ./format_datasets/total_neg.txt root@es5:/var/www/eyenlp/files/users/public/corpus/
+scp ./format_datasets/total_pos.txt root@es5:/var/www/eyenlp/files/users/public/corpus/
 
