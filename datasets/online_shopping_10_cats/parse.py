@@ -7,9 +7,22 @@ import csv
 
 
 with open('./online_shopping_10_cats.csv', encoding='utf8') as r, \
-    open('../../format_datasets/online_shopping_10_cats/online_shopping_10_cats_pos.txt', 'w', encoding='utf8') as pos, \
-    open('../../format_datasets/online_shopping_10_cats/online_shopping_10_cats_neg.txt', 'w', encoding='utf8') as neg:
+    open('../../format_datasets/online_shopping_10_cats/test_corpus.csv', 'w', encoding='utf8') as test, \
+    open('../../format_datasets/online_shopping_10_cats/train_pos.txt', 'w', encoding='utf8') as pos, \
+    open('../../format_datasets/online_shopping_10_cats/train_neg.txt', 'w', encoding='utf8') as neg:
+    index = 0
+    test_csv = csv.DictWriter(test, ['label', 'cat', 'content'])
+    test_csv.writeheader()
     for row in csv.DictReader(r):
+        index += 1
+        if index % 5 == 0:
+            test_csv.writerow({
+                'label': row['label'],
+                'cat': row['cat'],
+                'content': row['review']
+            })
+            continue
+
         content = row['review'].replace("\n", ' ').strip() + "\n"
         if row['label'] == '1':
             pos.write(content)
