@@ -7,7 +7,7 @@ import csv
 
 
 with open('./online_shopping_10_cats.csv', encoding='utf8') as r, \
-    open('../../format_datasets/online_shopping_10_cats/test_corpus.csv', 'w', encoding='utf8') as test, \
+    open('../../format_datasets/online_shopping_10_cats/test_online_shopping_10_cats.csv', 'w', encoding='utf8') as test, \
     open('../../format_datasets/online_shopping_10_cats/train_online_shopping_10_cats_pos.txt', 'w', encoding='utf8') as pos, \
     open('../../format_datasets/online_shopping_10_cats/train_online_shopping_10_cats_neg.txt', 'w', encoding='utf8') as neg:
     index = 0
